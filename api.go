@@ -18,7 +18,7 @@ func NewJobHandler(c *gin.Context) {
 
 	var job Jobs
 	if err := c.ShouldBindJSON(&job); err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid JSON"})
 		return
 	}
 

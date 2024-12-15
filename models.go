@@ -11,10 +11,10 @@ func CreateTable(conn *pgx.Conn) error {
 	query := `
 	CREATE TABLE IF NOT EXISTS jobs (
 		id SERIAL PRIMARY KEY,
-		title STRING NOT NULL,
-		priority STRING NOT NULL,
-		status STRING NOT NULL,
-		worker STRING NOT NULL
+		title TEXT NOT NULL,
+		priority INT NOT NULL,
+		status TEXT NOT NULL,
+		worker TEXT NOT NULL
 	);`
 	_, err := conn.Exec(context.Background(), query)
 	if err != nil {
